@@ -260,3 +260,8 @@ i {
     background-color: rgb(14, 157, 167);
     color: white;
   }
+  #select {
+    padding: 5px 10px;
+    margin: 10px 0;
+    border: 3px solid rgb(14, 157, 167);
+  }
