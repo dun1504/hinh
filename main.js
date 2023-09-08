@@ -95,6 +95,8 @@ updateChart();
 function showprofile() {
     document.getElementById("profile").style.display = "block";
     document.getElementById("off").style.display = "none";
+    document.getElementById("data").style.display = "none";
+
 }
 function home() {
     document.getElementById("profile").style.display = "none";
@@ -105,4 +107,6 @@ function home() {
 function showdata() {
     document.getElementById("data").style.display = "block";
     document.getElementById("off").style.display = "none";
+    document.getElementById("profile").style.display = "none";
+
 }
