@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div class="header">
+      <h3 onclick="home()">Menu</h3>
+      <div class="search-container">
+        <input type="text" class="search-input" placeholder="Tìm kiếm..." />
+        <i class="fas fa-search search-icon"></i>
+        <i onclick="showprofile()" class="fa-solid fa-user"></i>
+      </div>
+    </div>
+    <div id="profile" class="profile">
+      <div class="card">
+        <img src="./hinhn.jpg" alt="John" />
+        <div class="main-profile">
+          <h3>Nguyễn Đình Hinh</h3>
+          <p class="title">Lớp: D20CQAT01-B</p>
+          <p>MSV: B20DCAT033</p>
+          <a href="#"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="#"><i class="fa-brands fa-youtube"></i></a>
+          <p><button>Contact</button></p>
+        </div>
+      </div>
+    </div>
+    <div id="data" class="data">
+      <h1>DATA</h1>
+
+      <table id="customers">
+        <tr>
+          <th>Nhiệt độ</th>
+          <th>Độ ẩm</th>
+          <th>Ánh sáng</th>
+        </tr>
+        <tr>
+          <td>20</td>
+          <td>10</td>
+          <td>10</td>
+        </tr>
+        <tr>
+          <td>20</td>
+          <td>10</td>
+          <td>10</td>
+        </tr>
+        <tr>
+          <td>20</td>
+          <td>10</td>
+          <td>10</td>
+        </tr>
+        <tr>
+          <td>20</td>
+          <td>10</td>
+          <td>10</td>
+        </tr>
+        <tr>
+          <td>20</td>
+          <td>10</td>
+          <td>10</td>
+        </tr>
+        <tr>
+          <td>20</td>
+          <td>10</td>
+          <td>10</td>
+        </tr>
+        <tr>
+          <td>20</td>
+          <td>10</td>
+          <td>10</td>
+        </tr>
+        <tr>
+          <td>20</td>
+          <td>10</td>
+          <td>10</td>
+        </tr>
+        <tr>
+          <td>20</td>
+          <td>10</td>
+          <td>10</td>
+        </tr>
+        <tr>
+          <td>20</td>
+          <td>10</td>
+          <td>10</td>
+        </tr>
+      </table>
+    </div>
+    <div id="off" class="main">
+      <div class="main-left">
+        <div class="ahead">
+          <div class="img">
+            <img src="./h.jpg" alt="" />
+          </div>
+          <div class="content">
+            <p>Nguyễn Đình Hinh</p>
+            <p>B20DCAT065</p>
+          </div>
+        </div>
+        <div class="footer">
+          <i class="fa-solid fa-gauge-high"></i
+          ><span style="padding-left: 20px">Dashboard</span><br /><br />
+          <i class="fa-solid fa-gauge-high"></i
+          ><span onclick="showdata()" style="padding-left: 20px">Data</span>
+        </div>
+      </div>
+      <div class="main-right">
+        <div class="main-header">
+          <div class="box">
+            <i class="fa-solid fa-temperature-low"></i>
+            <div class="box-content">
+              <p>Nhiệt độ</p>
+              <p><span id="temperature">--</span>°C</p>
+            </div>
+          </div>
+          <div class="box">
+            <i class="fa-solid fa-snowflake"></i>
+            <div class="box-content">
+              <p>Độ ẩm</p>
+              <p style="color: blue"><span id="humidity">--</span>%</p>
+            </div>
+          </div>
+          <div class="box">
+            <i class="fa-regular fa-lightbulb"></i>
+            <div class="box-content">
+              <p>Ánh sáng</p>
+              <p style="color: orange"><span id="light">--</span> lux</p>
+            </div>
+          </div>
+        </div>
+        <div class="center">
+          <div class="container">
+            <h1>Biểu Đồ Hiển Thị</h1>
+            <div class="sensor">
+              <!-- <h2>Thông tin cảm biến</h2> -->
+              <!-- <p>Độ ẩm: <span id="humidity">--</span>%</p> -->
+              <!-- <p>Nhiệt độ: <span id="temperature">--</span>°C</p> -->
+              <!-- <p>Ánh sáng: <span id="light">--</span>lux</p> -->
+            </div>
+            <div class="controls">
+              <!-- <h2>Điều khiển</h2>
+              <label for="lightSwitch">Đèn</label>
+              <input type="checkbox" id="lightSwitch" />
+              <label for="fanSwitch">Quạt</label>
+              <input type="checkbox" id="fanSwitch" /> -->
+            </div>
+            <div class="chart">
+              <canvas id="chart"></canvas>
+            </div>
+          </div>
+          <div class="main-footer">
+            <div class="box-f" id="fanSwitch">
+              <h5>Trạng thái đèn</h5>
+              <div class="icon">
+                <i class="fa-solid fa-toggle-off"></i>
+                <i class="fa-regular fa-lightbulb"></i>
+              </div>
+            </div>
+            <div class="box-f">
+              <h5>Trạng thái đèn</h5>
+              <div class="icon" id="lightSwitch">
+                <i class="fa-solid fa-toggle-off"></i>
+                <i class="fa-regular fa-lightbulb"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./main.js"></script>
+  </body>
+</html>
